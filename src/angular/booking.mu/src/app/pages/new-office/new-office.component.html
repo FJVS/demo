@@ -1,0 +1,30 @@
+<div>
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input type="text" [(ngModel)]="name" id="name">
+  </div>
+
+  <div>
+    <label for="type">
+      Type
+    </label>
+    <input type="text" [(ngModel)]="type" id="type">
+  </div>
+
+  <div>
+    <img *ngIf="image.length > 0" src="{{'data:image/jpg;base64,' + image}}" alt="Room"/>
+  </div>
+
+  <div class="add-button" (click)="fileInput.click()">
+    <div class="label">Add photo</div>
+    <input #fileInput type="file" (change)="onFileChanged($event)" accept="image/jpeg" style="display: none"/>
+  </div>
+
+  <div>
+    <button class="button" (click)="bookItem()">Save</button>
+  </div>
+
+</div>

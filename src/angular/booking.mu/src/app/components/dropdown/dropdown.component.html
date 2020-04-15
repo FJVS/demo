@@ -1,0 +1,7 @@
+<div class="dropdown-container" [class.show]="showList">
+  <div class="value">{{ selectedValue.name }}</div>
+  <div class="icon" (click)="toggleList()"></div>
+  <div class="list">
+    <div class="list-item" *ngFor="let value of values" (click)="selectItem(value)">{{ value.name }}</div>
+  </div>
+</div>

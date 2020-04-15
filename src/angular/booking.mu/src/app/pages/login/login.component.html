@@ -1,0 +1,28 @@
+<div class="title">Login</div>
+
+<P></P>
+
+<div>
+  <label for="email">
+    Email
+  </label>
+  <input type="email" [(ngModel)]="email" id="email">
+</div>
+
+<div>
+  <label for="password">
+    Password
+  </label>
+  <input type="password" [(ngModel)]="password" id="password">
+</div>
+
+<div class="checkbox" [class.selected]="rememberMe">{{ "RememberMe" }}
+  <div class="box" (click)="toggleChecked()"></div>
+</div>
+
+<p></p>
+
+<div>
+  <button type="button" (click)="onSubmit()">Login</button>
+</div>
+

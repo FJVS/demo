@@ -1,0 +1,51 @@
+<div>
+  <p></p>
+
+  <div>
+    <app-search (textChanged)="onTextChanged($event)"></app-search>
+  </div>
+
+  <p></p>
+
+  <div *ngIf="loaded; else notLoaded">
+
+    <div>
+      <h1>Current offices</h1>
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Position</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let office of offices">
+          <td>{{ office.id }}</td>
+          <td>{{ office.name }}</td>
+          <td>{{ office.type }}</td>
+          <td [routerLink]="['/edit-office',office.id]">
+            <button type="button">Edit</button>
+          </td>
+          <td>
+            <button type="button" (click)="showDeletePopup(office.id)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+  <ng-template #notLoaded>
+    <p>
+      Loading data...
+    </p>
+  </ng-template>
+
+  <app-popup [showPopup]="showPopup" [type]="type" [deleteId]="deleteId"
+             [deleteMessage]="'Do you want to delete this item?'" (closePopup)="closePopup($event)"></app-popup>
+
+</div>

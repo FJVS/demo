@@ -1,0 +1,34 @@
+<div class="popup" [class.show]="showPopupRate">
+
+  <div class="popup-container">
+
+    <div class="title">Rating</div>
+
+    <P></P>
+
+    <div>
+      <label for="comment">
+        Comments
+      </label>
+      <textarea name="Text1" cols="40" rows="5" [(ngModel)]="comments" id="comment"></textarea>
+    </div>
+
+    <div>
+      <label for="grade">
+        Grade
+      </label>
+      <input type="number" min="0" max="10" [(ngModel)]="grade" id="grade">
+    </div>
+
+    <div class="action-button">
+      <div class="cancel-button" (click)="onCancel()">
+        <div class="cancel-icon"></div>
+      </div>
+      <div class="ok-button" (click)="onSubmit()">
+        <div class="ok-icon"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,66 @@
+<div>
+  <div>
+    <label for="booker">
+      Booker
+    </label>
+    <input type="text" [(ngModel)]="booker" id="booker" disabled>
+  </div>
+
+  <div>
+    <label for="date">
+      Date
+    </label>
+    <input type="date" [(ngModel)]="date" min="2020-03-20" id="date">
+  </div>
+
+  <div>
+    <label for="stime">
+      Start time
+    </label>
+    <input type="time" [(ngModel)]="stime" id="stime">
+  </div>
+
+  <div>
+    <label for="etime">
+      End time
+    </label>
+    <input type="time" [(ngModel)]="etime" id="etime">
+  </div>
+
+  <label>
+    Select office
+  </label>
+
+  <div class="dropdown-item">
+    <app-dropdown [values]="officeList" [selectedValue]="selectedOffice" (select)="updateValue($event)"
+                  [showList]="showList"></app-dropdown>
+  </div>
+
+  <p></p>
+
+  <label>
+    Select equipment(s)
+  </label>
+
+  <div class="checkbox">
+    <app-checkbox [values]="equipmentList" [checked]="checkEquipments" (checkedChanged)="onCheckChanged($event)"
+                  [type]="equipment"></app-checkbox>
+  </div>
+
+  <p></p>
+
+  <div>
+    <app-search (textChanged)="onTextChanged($event)"></app-search>
+  </div>
+
+  <div class="checkbox">
+    <app-checkbox [values]="employees" [checked]="checkParticipants"
+                  (checkedChanged)="onCheckChangedParticipants($event)"
+                  [type]="employee"></app-checkbox>
+  </div>
+
+  <div>
+    <button class="button" (click)="bookItem()">Book</button>
+  </div>
+
+</div>

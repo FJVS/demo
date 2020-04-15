@@ -1,0 +1,5 @@
+<div class="list">
+  <div class="checkbox" [class.selected]="checked[i]" *ngFor="let value of values index as i">{{ value.name }}
+    <div class="box" (click)="toggleChecked(i,type,value.name)"></div>
+  </div>
+</div>

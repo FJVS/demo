@@ -1,0 +1,14 @@
+<div class="popup" [class.show]="showPopup">
+  <div class="popup-container">
+    <div class="title">Confirmation</div>
+    <div class="delete-message">{{ deleteMessage }}</div>
+    <div class="action-button">
+      <div class="cancel-button" (click)="onCancel()">
+        <div class="cancel-icon"></div>
+      </div>
+      <div class="ok-button" (click)="onDelete()">
+        <div class="ok-icon"></div>
+      </div>
+    </div>
+  </div>
+</div>

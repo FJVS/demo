@@ -1,0 +1,21 @@
+.add-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 40px;
+  background-color: #990d35;
+  box-shadow: 0 3px 6px #00000061;
+  border-radius: 25px;
+  cursor: pointer;
+  user-select: none;
+  max-width: 200px;
+  margin: 10px 25px;
+
+  .label {
+    font-family: "Maax", Arial, serif;
+    font-size: 14px;
+    color: #FFFFFF;
+  }
+}
